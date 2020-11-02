@@ -4,18 +4,19 @@ import CardContent from '@material-ui/core/CardContent';
 
 export class Task extends Component {
 
+  // When selecting a task
   handleClick = (task) => {
-    this.props.taskClicked(task);
+    this.props.selecteTask(task);
   }
 
   render() {
-    const { title } = this.props.data;
+    const task = this.props.data;
 
     return (
       <div style={{ marginBottom: '1rem', width: '50vw' }}>
-        <Card onClick={() => this.handleClick(this.props.data)} variant="outlined">
+        <Card onClick={() => this.handleClick(task)} variant="outlined">
           <CardContent>
-            {title}
+            {task.title}
           </CardContent>
         </Card>
       </div>
